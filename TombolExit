@@ -1,0 +1,4 @@
+int keluar= JOptionPane.showConfirmDialog(null, "Keluar Program","Exit",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+       if(keluar==JOptionPane.YES_OPTION){
+        dispose();
+    }        
