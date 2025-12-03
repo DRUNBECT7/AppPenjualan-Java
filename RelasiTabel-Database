@@ -1,0 +1,23 @@
+CREATE view queryjual AS 
+SELECT
+`tbl_transaksi`.`id_transaksi`,
+`tbl_transaksi`.`no_transaksi`,
+`tbl_transaksi`.`tgltrans`,
+`tbl_transaksi`.`kdpel`,
+`tbl_pelanggan`.`nmpel`,
+`tbl_pelanggan`.`alamat`,
+`tbl_pelanggan`.`telp`,
+`tbl_transaksi`.`kdbrg`,
+`tbl_barang`.`nmbrg`,
+`tbl_barang`.`satuan`,
+`tbl_barang`.`jnsbrg`,
+`tbl_barang`.`hrgbeli`,
+`tbl_barang`.`hrgjual`,
+`tbl_barang`.`stok`,
+`tbl_transaksi`.`jmlhjual`,
+`tbl_transaksi`.`jmlhhrg`
+
+FROM `tbl_transaksi`,`tbl_pelanggan`,`tbl_barang`
+WHERE `tbl_transaksi`.`kdpel`=`tbl_pelanggan`.`kdpel`
+AND 
+`tbl_transaksi`.`kdbrg`=`tbl_barang`.`kdbrng`
