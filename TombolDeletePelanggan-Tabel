@@ -1,0 +1,20 @@
+try
+        {
+        if ((txtKodePlgn.getText().equals("")) 
+          || (txtNamaPlgn.getText().equals("")) 
+          || (txtAlamatPlgn.getText().equals("")) 
+          || (txtTeleponPlgn.getText().equals(""))) 
+        {
+            JOptionPane.showMessageDialog(rootPane,"Silahkan pilih data yang akan di hapus!"); 
+        }
+        else
+        sql="DELETE FROM tbl_pelanggan WHERE kdpel='"+ txtKodePlgn.getText()+"'";
+        ps=koneksikedatabase.ambilKoneksiDatabase().prepareStatement(sql);
+        ps.executeUpdate();
+        JOptionPane.showMessageDialog(rootPane, "Hapus Data Berhasil");
+        tampilkanData();
+        Bersih ();
+        }catch(Exception e)
+        {
+       // JOptionPane.showMessageDialog(rootPane, "Data Gagal Di Hapus"+e.getMessage());  
+        }
