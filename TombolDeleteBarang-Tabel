@@ -1,0 +1,23 @@
+try
+{
+    if ((txtKodebrg.getText().equals("")) 
+          || (txtNamabrg.getText().equals("")) 
+          || (cboSatuan.getSelectedItem().equals("--Pilih--")) 
+          || (cboJnsbrg.getSelectedItem().equals("--Pilih--")) 
+          || (txtHrgbeli.getText().equals("") 
+          || (txthrgjual.getText().equals("")) 
+          || (txtStok.getText().equals(""))))
+        {
+            JOptionPane.showMessageDialog(rootPane,"Silahkan pilih data yang akan di hapus!"); 
+        }
+        else
+        sql="DELETE FROM tbl_barang WHERE kdbrng='"+ txtKodebrg.getText()+"'";
+        ps=koneksikedatabase.ambilKoneksiDatabase().prepareStatement(sql);
+        ps.executeUpdate();
+        JOptionPane.showMessageDialog(rootPane, "Hapus Data Berhasil");
+        tampilkanData();
+        Bersih ();
+        }catch(Exception e)
+        {
+       // JOptionPane.showMessageDialog(rootPane, "Data Gagal Di Hapus"+e.getMessage());  
+        }    
