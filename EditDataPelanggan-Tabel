@@ -1,0 +1,23 @@
+  try
+       {
+           if ((txtKodePlgn.getText().equals(""))
+           || (txtNamaPlgn.getText().equals(""))
+           || (txtAlamatPlgn.getText().equals(""))
+           || (txtTeleponPlgn.getText().equals("")))
+             {
+               JOptionPane.showMessageDialog(rootPane,"Silakan Pilih data yang akan di edit");
+             } 
+           else 
+               sql="UPDATE tbl_pelanggan SET nmpel='"+ txtNamaPlgn.getText()+
+                        "',alamat='"+ txtAlamatPlgn.getText()+
+                        "',telp='"+ txtTeleponPlgn.getText()+
+                        "' WHERE kdpel='"+ txtKodePlgn.getText()+"'";
+                       ps=koneksikedatabase.ambilKoneksiDatabase().prepareStatement(sql);
+                       ps.executeUpdate();
+                       JOptionPane.showMessageDialog(rootPane,"Data Berhasil Di Edit");
+                       tampilkanData();
+                       Bersih();     
+                }catch (Exception e)
+                {
+                  //  
+                }
