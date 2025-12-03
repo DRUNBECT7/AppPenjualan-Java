@@ -1,0 +1,29 @@
+try
+        {
+          if ((txtKodebrg.getText().equals("")) 
+          || (txtNamabrg.getText().equals("")) 
+          || (cboSatuan.getSelectedItem().equals("--Pilih--")) 
+          || (cboJnsbrg.getSelectedItem().equals("--Pilih--")) 
+          || (txtHrgbeli.getText().equals("") 
+          || (txthrgjual.getText().equals("")) 
+          || (txtStok.getText().equals(""))))
+        {
+            JOptionPane.showMessageDialog(rootPane,"Silahkan pilih data yang akan di edit!"); 
+        }
+        else
+            sql="UPDATE tbl_barang SET nmbrg='"+ txtNamabrg.getText()+
+                    "',satuan='"+cboSatuan.getSelectedItem()+
+                    "',jnsbrg='"+cboJnsbrg.getSelectedItem()+
+                    "',hrgbeli='"+ txtHrgbeli.getText()+
+                    "',hrgjual='"+ txthrgjual.getText()+
+                    "',stok='"+ txtStok.getText()+
+                    "' WHERE kdbrng='"+ txtKodebrg.getText()+"'";
+            ps=koneksikedatabase.ambilKoneksiDatabase().prepareStatement(sql);
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(rootPane, "Data Berhasil Di Edit");
+            tampilkanData();
+            Bersih();
+        }catch (Exception e)
+        {
+         JOptionPane.showMessageDialog(rootPane, "Data Gagal Di Edit"+e.getMessage());
+        }
