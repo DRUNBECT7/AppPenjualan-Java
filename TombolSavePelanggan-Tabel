@@ -1,0 +1,26 @@
+PreparedStatement ps=null;
+    String sql="Insert into tbl_pelanggan values(?,?,?,?)";
+    try{
+            if ((txtKodePlgn.getText().equals(""))
+           || (txtNamaPlgn.getText().equals(""))
+           || (txtAlamatPlgn.getText().equals(""))
+           || (txtTeleponPlgn.getText().equals("")))
+           {
+               JOptionPane.showMessageDialog(rootPane,"Lengkapi data dengan benar terlebih dahuu");              
+           }
+           else 
+           {
+                ps=Koneksi.koneksikedatabase.ambilKoneksiDatabase().prepareStatement(sql);
+                ps.setString(1,txtKodePlgn.getText());
+                ps.setString(2,txtNamaPlgn.getText());
+                ps.setString(3,txtAlamatPlgn.getText());
+                ps.setString(4,txtTeleponPlgn.getText());
+                ps.executeUpdate();
+                JOptionPane.showMessageDialog(rootPane,"Data anda sudah tersimpan");
+                tampilkanData();
+                Bersih();
+                   }
+            }catch (Exception e) 
+                    {
+                    JOptionPane.showMessageDialog(this,"Kode ini sudah ada, silakan kode pelanggan yang baru");
+                    }
