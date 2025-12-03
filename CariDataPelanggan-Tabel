@@ -1,0 +1,30 @@
+private void cariData(){
+ try
+  {        
+    String search = txtCariData.getText();
+    String sql="SELECT * FROM tbl_pelanggan WHERE kdpel like '%"+search+"%' OR nmpel like '%"+search+"%'";
+    PreparedStatement ps=null;
+    Object [] row={"Kode Pelanggan","Nama Pelanggan","Alamat","Telepon","Harga Beli"};
+    DefaultTableModel dtm=new DefaultTableModel(null,row);
+      TblPelanggan.setModel(dtm);
+      jScrollPane1.setEnabled(true);
+      jScrollPane1.setBorder(null);
+      jScrollPane1.setViewportView( TblPelanggan);
+    ResultSet rs=null;
+    ps=koneksikedatabase.ambilKoneksiDatabase().prepareStatement(sql);
+    rs=ps.executeQuery();
+      while(rs.next()){
+        String kodepelanggan=rs.getString(1);
+        String namapelanggan=rs.getString(2);
+        String alamat=rs.getString(3);
+        String telepon=rs.getString(4);
+                                
+        String [] baris={kodepelanggan,namapelanggan,alamat,telepon};
+        dtm.addRow(baris);
+        }
+        }
+        catch(Exception e)  {
+            JOptionPane.showMessageDialog(rootPane,"Data yang Anda cari Tidak dapat Ditemukan, " + e.getMessage());
+           // System.err.println("error (search) : " +e);
+        }
+    }
