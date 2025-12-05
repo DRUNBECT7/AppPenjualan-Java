@@ -12,5 +12,9 @@ Proyek ini menggunakan MIT License dan dapat digunakan atau dimodifikasi dengan 
 📬 Kontak
 
 Dikembangkan oleh Rizki Ardiansyah
+
+Jika ingin berdiskusi atau mengembangkan bersama:
+
 📧 Email: rizkyarrdiiansyah@gmail.com
+
 📱 Instagram: @codrizsain
