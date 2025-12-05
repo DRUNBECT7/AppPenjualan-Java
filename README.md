@@ -7,12 +7,10 @@ Proyek ini dirancang untuk membantu proses pencatatan transaksi sederhana, mulai
 Repository ini dapat digunakan sebagai media pembelajaran pemrograman Java, studi kasus GUI, hingga dasar pembuatan aplikasi kasir mini. Proyek terbuka untuk dikembangkan lebih jauh, baik dengan menambah fitur, memperbaiki tampilan, maupun meningkatkan sistem database.
 
 📜 Lisensi
-
 Proyek ini menggunakan MIT License dan dapat digunakan atau dimodifikasi dengan tetap mencantumkan kredit.
 
 📬 Kontak
 
 Dikembangkan oleh Rizki Ardiansyah
 📧 Email: rizkyarrdiiansyah@gmail.com
-
 📱 Instagram: @codrizsain
